@@ -1,0 +1,16 @@
+<!-- only one class/style property can be binded here -->
+<div class="box" [class.myClass] = "!myProp" [style.margin]="myStyle">
+    Hell0
+</div>
+
+<div class="box" [class.myClass] = "myProp" [style.margin]="isActive?myStyle:''">
+    Hell0
+</div>
+<br><br>
+<!-- multiple claas style binding -->
+<!-- <div class="box" [ngClass]=" 'class1 class2 class3' ">
+    Hell0
+</div> -->
+<div class="box" [ngClass]="multClasses" [ngStyle]="mltStyle">
+    Hell0
+</div>

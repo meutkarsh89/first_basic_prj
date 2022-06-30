@@ -1,0 +1,48 @@
+<!-- <button onclick="onAddtoCart()">Add to cart</button> -->
+<!-- <button (click)="onAddtoCart()">Add to cart</button> -->
+
+<br><br>
+
+<input (click)="onTypeValue($event)" type="text" name="" id="" value="Utkarsh">
+<br><br>
+<button value="Laptop" (click)="onAddtoCart($event)">Laptop</button>
+<button value="TV" (click)="onAddtoCart($event)">TV</button>
+<button value="Fridge" (click)="onAddtoCart($event)">Fridge</button>
+<br><br>
+{{msg}}
+
+
+<!-- (blur) ="onMyMethod()"
+(submit) ="onMyMethod()"
+
+(scroll) ="onMyMethod()"
+
+(cut) ="onMyMethod()"
+(copy) ="onMyMethod()"
+(paste) ="onMyMethod()"
+
+(keydown) ="onMyMethod()"
+(keypress) ="onMyMethod()"
+(keyup) ="onMyMethod()"
+
+(mouseenter) ="onMyMethod()"
+(mousedown) ="onMyMethod()"
+(mouseup) ="onMyMethod()"
+
+(click) ="onMyMethod()"
+(dbllick) ="onMyMethod()"
+
+(drag) ="onMyMethod()" 
+(dragover) ="onMyMethod()"
+(drop) ="onMyMethod()"-->
+
+<br><br>
+<input #inpRef type="text" name="Aakash" value="Aakash">
+<br>
+{{msg}}
+<br>
+<button (click)="onGetData(inpRef)">Get Data</button>
+<br><br>
+<input type="text" name="abhay" id="two-way" [(ngModel)]="dynValue">
+<br>
+{{dynValue}}

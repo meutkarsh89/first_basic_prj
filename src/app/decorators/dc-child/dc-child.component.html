@@ -1,0 +1,13 @@
+<div class="card" appCustomColor>
+    <div class="card-body">
+       
+      <h5 class="card-title">My name is: {{userName}}</h5><br>
+      
+      <button (click)="onClick()">Update</button>
+      <br>
+      <button (click)="changeColor('green')">Green</button>&nbsp;
+      <button (click)="changeColor('blue')">Blue</button>
+
+      <ng-content></ng-content>
+    </div>
+    </div>

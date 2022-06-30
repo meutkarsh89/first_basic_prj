@@ -1,0 +1,48 @@
+<!-- My name is {{myName}} -->
+{{myName}}
+<br><br>
+<!-- expression -->
+{{5 + 9}}
+
+<br><br>
+<!-- string concatination -->
+{{"welcome "  + myName}}
+
+<br><br>
+<!-- javascript properties -->
+{{myName.length}}
+
+<br><br>
+<!-- javascript methods -->
+
+{{myName.toUpperCase()}}
+
+<br><br>
+<!-- custom method -->
+{{myMethod()}}
+
+<br><br>
+<!-- ternary conditional operator -->
+
+My website status is {{status ? "Online" : "Offline"}}
+
+<br><br><br>
+<!-- property binding -->
+<input type="text" name="" id="" value="{{myName}}">
+<br>
+<br>
+<input type="text" name="" id="" [value]="myName">
+<br><br>
+<input type="text" [disabled]="status" name="" id="" [value]="myName">
+<br><br>
+<!-- <input type="text" [hidden]="!status" name="" id="" [value]="welcome + myName"> -->
+<br><br>
+<input type="text" [disabled]="status" name="" id="" [value]="status ? 'Online' : 'Offline'">
+
+
+
+
+
+
+
+

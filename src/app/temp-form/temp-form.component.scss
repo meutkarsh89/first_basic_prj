@@ -1,0 +1,26 @@
+.bg-style{
+    background-color: beige;
+    margin: auto;
+    height: auto;
+    // min-height: 25em;
+    // text-align: center;
+
+    input{
+        &.ng-invalid{
+            &.ng-touched{
+                border: 1px solid red;
+                box-shadow: 0 0 10px rgba(250, 4, 4, 0.2) inset;
+            }
+        }
+    }
+
+
+    select{
+        &.ng-invalid{
+            &.ng-touched{
+                border: 1px solid red;
+                box-shadow: 0 0 10px rgba(247, 4, 4, 0.2) inset;
+            }
+        }
+    }
+}

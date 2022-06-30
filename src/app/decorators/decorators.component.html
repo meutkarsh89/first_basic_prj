@@ -1,0 +1,20 @@
+<div class="text-center">
+    <h2>Decorators</h2><br>
+    <div #box>
+        <h4 class="mb-5">This is the component for ViewChild and ContentChild</h4>
+        
+    </div>
+    
+    <br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <button (click)="changeUser()">change user</button>
+            <button (click)="invokeMethod()">call method</button>
+        </div>
+        <div class="col-sm-6">
+            <app-dc-child >
+                <div #child>this is for content child</div>
+            </app-dc-child>
+        </div>
+    </div>
+</div>

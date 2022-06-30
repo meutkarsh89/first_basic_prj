@@ -1,0 +1,14 @@
+<div class="text-center">
+    <h1 class="text-center">Life cycle hooks</h1>
+    <input type="text" name="username" #uname>
+    <button class="" (click)="onUpdateUser(uname)">Update</button>
+    <br>
+    <app-comp5 *ngIf="compRequired" [userName]="name">
+        <!-- ngContent : {{name}} -->
+    </app-comp5>
+    <br>
+    <button class="btn btn-danger" (click)="onDestroy()">Destroy</button>
+</div>
+
+
+

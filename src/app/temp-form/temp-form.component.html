@@ -1,0 +1,49 @@
+<div class="bg-style py-3">
+    <h2 class="text-center my-3">
+        Template Driven Form
+    </h2>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 py-3 bg-white rounded">
+            <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+                <div ngModelGroup="userDetails" #userDetails="ngModelGroup" >
+                    <div class="mb-3">
+                        <label for="uname" class="form-label">User Name*</label>
+                        <input type="text" class="form-control" id="uname"
+                         placeholder="enter User name" name="uname" [(ngModel)]="uName" required>
+                        <small *ngIf="uName" class="form-text text-success">Your UserName is <i> {{uName}}</i></small>
+
+                        <button class="btn btn-sm btn-primary mt-3" (click)="onSetValue($event)">Set default Value</button>
+                      </div>
+                     
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email*</label>
+                        <input type="email" class="form-control" id="email"
+                         placeholder="abc@cd.co" name="uemail" ngModel required email #email="ngModel">
+                          <small *ngIf="!email.valid && email.touched" class="text-danger">Please enter correct email</small>
+                      </div>
+                      <small *ngIf="!userDetails.valid && userDetails.touched" class="text-warning">fill correct userDetails</small>
+                </div>
+               
+                <div class="mb-3 form-group">
+                  <label class="form-label" for="course">Course</label>
+                  <select class="form-control form-select" name="course" [ngModel]="defaultCourse">
+                    <option selected>Select any course</option>
+                    <option value="HTML">HTML</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Angular">Angular</option>
+                  </select>
+                </div>
+                <button type="submit" [disabled]="!userForm.valid" class="btn btn-success">Submit</button>
+              </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5" *ngIf="submitted">
+        <div class="col-sm-4 bg-white rounded">
+            <h2>Form Data</h2>
+            <p>User Name : <strong>{{formData.userName}}</strong></p>
+            <p>User Email : <strong>{{formData.email}}</strong></p>
+            <p>Course : <strong>{{formData.course}}</strong></p>
+        </div>
+    </div>
+</div>

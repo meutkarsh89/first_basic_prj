@@ -1,0 +1,15 @@
+.bg-style{
+    // background: rgb(255, 239, 166);
+    margin: auto;
+    height: 100%;
+    text-align: center;
+}
+.card-group{
+    display: inline-block;
+    flex-wrap: wrap;
+    .card{
+        display: inline-block;
+        margin: 0 10px 10px 0;
+        width: 45%;
+    }
+}
