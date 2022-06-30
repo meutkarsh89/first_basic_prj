@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- *ngIf="true" -->
+            <button class="btn btn-success mb-3" (click)="onClick()">Click me</button>
+            <div *ngIf="isValid; else elseblock">This is a block with name custome block</div>
+            <!-- <div #elseblock>No block present</div> -->
+            <ng-template #elseblock>
+                No block present
+            </ng-template>
+        </div>
+    </div>
+</div>

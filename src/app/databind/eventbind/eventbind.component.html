@@ -1,0 +1,47 @@
+<button (click)="onAddtoCart()">Add to cart</button>
+<br><br>
+{{msg}}
+<br><br>
+<input #inpRef type="text" name="" id="" value="Web design">
+<button (click)="onClicktoCart(inpRef)">ON CLICK</button>
+<br><br>
+{{inpMsg}}
+<br><br>
+
+<button (click)="onAddtoCartt($event)" value="Laptop">Laptop</button>
+<button (click)="onAddtoCartt($event)" value="TV">TV</button>
+<button (click)="onAddtoCartt($event)" value="Mobile">Mobile</button>
+<br><br>
+{{cart}}
+
+<br><br>
+
+<input type="text" name="abhay" [(ngModel)]="data">
+<button class="btn btn-primary" (click)="onChangeinp()">Click me</button>
+
+
+
+
+<!-- (blur) ="onMyMethod()"
+(submit) ="onMyMethod()"
+
+(scroll) ="onMyMethod()"
+
+(cut) ="onMyMethod()"
+(copy) ="onMyMethod()"
+(paste) ="onMyMethod()"
+
+(keydown) ="onMyMethod()"
+(keypress) ="onMyMethod()"
+(keyup) ="onMyMethod()"
+
+(mouseenter) ="onMyMethod()"
+(mousedown) ="onMyMethod()"
+(mouseup) ="onMyMethod()"
+
+(click) ="onMyMethod()"
+(dblclick) ="onMyMethod()"
+
+(drag) ="onMyMethod()" 
+(dragover) ="onMyMethod()"
+(drop) ="onMyMethod()"-->

@@ -1,0 +1,8 @@
+<div class="col-md-12 bg-success text-center text-white mt-3 py-4">
+    <h3 *ngIf="!productSelected">Please Select any Product</h3>
+    <!-- <ng-template #selected>
+      <h3>{{productSelected}} is Selected</h3>
+    </ng-template> -->
+    <h3 *ngIf="productSelected">{{productSelected}} is Selected</h3>
+    <button class="btn btn-primary" (click)="onAddToCart()">Add to Cart</button>
+</div>

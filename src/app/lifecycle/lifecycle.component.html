@@ -1,0 +1,9 @@
+<h1 class="text-center">LifeCycle Hooks</h1>
+<div class="text-center">
+    <input type="text" placeholder="type here..." #val>
+    <button class="btn btn-success mx-3" (click)="onSubmit(val)">Submit</button>
+    <app-comp5 *ngIf="status" [myValue]="value"></app-comp5>
+    <br>
+    <button (click)="onClick()">destroy</button>
+</div>
+

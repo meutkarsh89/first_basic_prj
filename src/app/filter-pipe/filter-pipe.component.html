@@ -1,0 +1,46 @@
+<h2 class="text-center my-3">
+    Filter Pipe
+</h2>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="mb-3">
+            <!-- <label for="searchBox" class="form-label">Search Bos</label> -->
+            <input type="text" class="form-control" id="searchBox" placeholder="search here..." [(ngModel)]="keyword">
+          </div>
+    </div>
+    <div class="col-sm-8">
+        <table class="table">
+            <thead class="table-dark">
+                
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Availability</th>
+                    </tr>
+                  
+                  
+            </thead>
+            <tbody >
+                <tr *ngFor="let prod of productArr | filterPipe: keyword ">
+                  <th scope="row">{{prod.srNo}}</th>
+                  <td>{{prod.name}}</td>
+                  <td>{{prod.price | currency:'USD'}}</td>
+                  <td>{{prod.avail}}</td>
+                </tr>
+                <!-- <tr>
+                  <th scope="row">2</th>
+                  <td>TV</td>
+                  <td>15000 Rs</td>
+                  <td>Not Available</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td >Laptop</td>
+                  <td>42000 Rs</td>
+                  <td>Available</td>
+                </tr> -->
+              </tbody>
+          </table>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="bg-style py-3">
+    <h2 class="text-center my-3">
+        Template driven Forms
+    </h2>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 py-3 bg-white rounded">
+            <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+                <div class="form-group" ngModelGroup="userDetails" #userDetails="ngModelGroup">
+                    <div class="mb-3">
+                        <label for="uname" class="form-label">User Name*</label>
+                        <input type="text" class="form-control" id="uname"
+                        placeholder="enter user name"
+                        name="uname" [(ngModel)]="uname" required>
+                        <small *ngIf="uname" class="text-success">user name is <strong>{{uname}}</strong></small>
+                        <button class="btn btn-sm btn-primary mt-3" (click)="onSetData($event)">Set Default data</button>
+                      </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="email" 
+                      placeholder="abc@xyx.com"
+                      name="email" ngModel required email #email="ngModel">
+                      <small *ngIf="!email.valid && email.touched" class="text-danger">please enter correct email</small>
+                      
+                    </div>
+                </div>
+                
+                
+                <div class="mb-3 form-group">
+                    <label class="form-label" for="course">Course</label>
+                    <select class="form-control form-select" name="course" ngModel [ngModel]="defaultCourse">
+                      <!-- <option selected>Select any course</option> -->
+                      <option value="HTML">HTML</option>
+                      <option value="JavaScript">JavaScript</option>
+                      <option value="Angular">Angular</option>
+                    </select>
+                  </div>
+                <button [disabled]="!userForm.valid" type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<!-- <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Hindustan Times</h5>
+      <p>Please let us know what to see</p>
+      <button class="btn btn-primary" (click)="onClickBtn()">Subscribe</button>
+    </div>
+</div> -->
+
+<div class="card">
+  <div class="card-body">
+    <ng-container *ngFor = "let prod of products">
+      product: <strong class="text-success">{{prod.name}}</strong> Id: <strong class="text-success">{{prod.id}}</strong>
+      <br>
+      <!-- <p>Please let us know what to see</p> -->
+    </ng-container>
+    
+    <!-- <button class="btn btn-primary" (click)="onClickBtn()">Subscribe</button> -->
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-8">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th scope="col">Product Img</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product ID</th>
+                <th scope="col">Product Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="status">
+                <tr *ngFor="let prod of products; index as i">
+                  <td>#{{i+1}}</td>
+                  <td><img src="{{prod.prodImg}}" style="width:110px" alt=""></td>
+                  <td>{{prod.prodName}}</td>
+                  <td>{{prod.prodId}}</td>
+                  <td>{{prod.prodPrice}}</td>
+                </tr>
+              </ng-container>
+                   
+            </tbody>
+          </table>
+
+    </div>
+</div>
+
+<br><br><br><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <input type="text" class="form-control" placeholder="user Name" #uname>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-primary" (click)="onAddUser(uname)">Add user</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">User Name</th>
+                    <th>Remove</th>
+            
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let studs of students; index as i">
+                    
+                    <td>{{studs.name}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="onRemoverUser(i)">delete</button>
+                    </td>
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-sm-8">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Index</th>
+                    <th scope="col">product Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let obj of products; index as i">
+                    <td>#{{i+1}}</td>
+                    <td><img src="{{obj.prodImg}}" style="width: 100px;" alt=""></td>
+                    <td>{{obj.prodName}}</td>
+                    <td>{{obj.prodId}}</td>
+                    <td>{{obj.prodPrice}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div> -->
+</div>

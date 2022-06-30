@@ -1,0 +1,61 @@
+.bg-style{
+    background-color: beige;
+    margin: auto;
+    height: auto;
+    // min-height: 25em;
+    // text-align: center;
+
+    input{
+        &.ng-invalid{
+            &.ng-touched{
+                border: 1px solid red;
+                box-shadow: 0 0 10px rgba(250, 4, 4, 0.2) inset;
+            }
+        }
+    }
+
+
+    select{
+        &.ng-invalid{
+            &.ng-touched{
+                border: 1px solid red;
+                box-shadow: 0 0 10px rgba(247, 4, 4, 0.2) inset;
+            }
+        }
+    }
+
+    .btn-add{
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        &:hover{
+            border: 1px solid #007bff;
+            background-color: #fff;
+            color: #007bff;
+        }
+        i{
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 12px;
+            display: inline-block;
+            position: relative;
+            bottom: 3px;
+            margin-right: 3px;
+        }
+        
+    }
+    .myRecStatus.INVALID{
+        border: 1px solid red;
+        box-shadow: 0 0 31px rgba(255,0,0,0.2);
+    }
+    .myRecStatus.PENDING{
+        border: 1px solid #f6de0b;
+        box-shadow: 0 0 31px rgba(255,235,59,0.7);
+    }
+    .myRecStatus.VALID{
+        border: 1px solid #2ee536;
+        box-shadow: 0 0 37px rgba(78,223,84,0.61);
+    }
+}

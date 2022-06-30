@@ -1,0 +1,10 @@
+<div class="text-center">
+    <h2 class="mb-4">Custom Pipes</h2>
+    <p>{{myVal | uxPipe: 10}}</p>
+    <!-- <div>{{today | date : 'medium' }}</div> -->
+    <ul>
+        <li *ngFor="let data of list">
+            {{data | uxPipe: 5}}
+        </li>
+    </ul>
+</div>

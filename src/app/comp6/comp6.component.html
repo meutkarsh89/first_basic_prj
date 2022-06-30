@@ -1,0 +1,12 @@
+<div class="card" appCustomDir>
+    <div class="card-body text-center">
+        My data: {{myValue}}
+        <br><br>
+        <button (click)="onClick()">submit</button>
+        <br>
+        <ng-content></ng-content>
+
+        <button (click)="changeClr('green')">Green</button>
+        <button (click)="changeClr('blue')">Blue</button>
+    </div>
+</div>
