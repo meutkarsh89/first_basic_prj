@@ -39,12 +39,12 @@ import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 import { CustomDirDirective } from './app-directives/custom-dir.directive';
 import { UxPipePipe } from './app-Pipes/ux-pipe.pipe';
 import { FilterPipeComponent } from './filter-pipe/filter-pipe.component';
-import { TempFormComponent } from './temp-form/temp-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+
 import { FilterPipePipe } from './app-Pipes/filter-pipe.pipe';
 // import { ProductsModule } from './products/products.module';
 import { ServiceModule } from './services/service.module';
 import { CardModule } from './app-shared-module/card/card.module';
+import { MyFormsModule } from './forms/my-forms.module';
 
 @NgModule({
   declarations: [
@@ -80,8 +80,6 @@ import { CardModule } from './app-shared-module/card/card.module';
     CustomDirDirective,
     UxPipePipe,
     FilterPipeComponent,
-    TempFormComponent,
-    ReactiveFormComponent,
     FilterPipePipe
   ],
   imports: [
@@ -92,7 +90,8 @@ import { CardModule } from './app-shared-module/card/card.module';
     HttpClientModule,
     // ProductsModule,
     ServiceModule,
-    CardModule
+    CardModule,
+    // MyFormsModule
   ],
   providers: [DesignUtilityService],
   bootstrap: [AppComponent]

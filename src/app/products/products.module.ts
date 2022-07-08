@@ -11,9 +11,9 @@ import { CardModule } from '../app-shared-module/card/card.module';
 // import { NgifComponent } from '../ngif/ngif.component';
 
 const proRoutes:Routes = [
-  {path: '', component: ProductsComponent, children:[
-    // {path: '', component: ProductsComponent},
-    {path:'laptop', component: LaptopComponent},
+  {path: '', children:[
+    {path: '', component: ProductsComponent},
+    {path: 'laptop', component: LaptopComponent},
     {path: 'television', component: TelevisionComponent},
     {path: 'mobile', component: MobileComponent},
     {path: 'washing-machine', component: WashingMachineComponent}
