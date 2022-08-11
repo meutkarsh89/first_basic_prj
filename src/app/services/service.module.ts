@@ -4,8 +4,9 @@ import { ServicesComponent } from './services.component';
 // import { Card1Component } from '../card1/card1.component';
 // import { Card2Component } from '../card2/card2.component';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+// import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { CardModule } from '../app-shared-module/card/card.module';
+import { PageNotFoundComponent } from '../app-shared-module/card/page-not-found/page-not-found.component';
 
 const servRoutes:Routes = [
   

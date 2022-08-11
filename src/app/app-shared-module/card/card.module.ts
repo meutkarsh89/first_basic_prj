@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Card1Component } from './card1/card1.component';
 import { Card2Component } from './card2/card2.component';
 import { NgifComponent } from './ngif/ngif.component';
+import { CardComponent } from './card/card.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -10,7 +12,9 @@ import { NgifComponent } from './ngif/ngif.component';
   declarations: [
     Card1Component,
     Card2Component,
-    NgifComponent
+    NgifComponent,
+    CardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +22,9 @@ import { NgifComponent } from './ngif/ngif.component';
   exports: [
     Card1Component,
     Card2Component,
-    NgifComponent
+    NgifComponent,
+    CardComponent,
+    PageNotFoundComponent
   ]
 })
 export class CardModule { }

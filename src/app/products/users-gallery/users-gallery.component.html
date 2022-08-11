@@ -1,0 +1,204 @@
+<div class="row container-fluid" style="padding: 0 8%;">
+    <h2 class="text-capitalize my-3">dashboard</h2>
+    <hr>
+    <div class="toast align-items-center text-white bg-primary border-0 w-100 d-block mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            Welcome, User!
+          </div>
+          
+        </div>
+    </div>
+    <hr>
+    <section class="row" [ngClass]=" loading? 'loading': '' ">
+      <ng-container *ngIf="userDetails.length">
+        <ng-container *ngFor="let user of userDetails;index as i">
+          <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../../../assets/profile.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text-capitalize">{{user.uname}}</h5>
+                      <section>
+                        <label for="">Designation:</label>
+                        <strong class="px-1 text-capitalize">{{user.designation}}</strong>
+                      </section>
+                      <section>
+                        <label for="">Department:</label>
+                        <strong class="px-1 text-capitalize">{{user.department}}</strong>
+                      </section>
+                      <section>
+                        <label for="" class="mr-1">Status:</label>
+                        <em class="mx-1 badge text-capitalize" [ngClass]="user.status!='online'? user.status!='offline'?'bg-warning':'bg-danger':'bg-success'">{{user.status}}</em>
+                      </section>
+                      <section class="py-3">
+                        <button [routerLink]="['./',user.uId]" type="button" class="btn btn-outline-primary">Add user</button>
+                        <button type="button" class="btn btn-outline-danger mx-4" 
+                        data-bs-dismiss="toast" aria-label="Close" style="color: red; padding:5px">
+                            <span class="btn btn-close"></span>
+                        </button>
+                      </section>
+                      
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="!userDetails.length">
+        <ng-container *ngFor="let item of generateFake(4)">
+          <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-flex justify-content-center align-items-top">
+                    <ngx-skeleton-loader class="my-4" appearance="circle" [theme]="{ height:'100px', width: '100px'}"></ngx-skeleton-loader>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <ngx-skeleton-loader [theme]="{ width: '40%'}"></ngx-skeleton-loader>
+                      <section>
+                        <ngx-skeleton-loader [theme]="{ width: '70%'}"></ngx-skeleton-loader>
+                        <!-- <label for="">Designation:</label>
+                        <strong class="px-1 text-capitalize">{{user.designation}}</strong> -->
+                      </section>
+                      <section>
+                        <ngx-skeleton-loader [theme]="{ width: '70%'}"></ngx-skeleton-loader>
+                        <!-- <label for="">Department:</label>
+                        <strong class="px-1 text-capitalize">{{user.department}}</strong> -->
+                      </section>
+                      <section>
+                        <ngx-skeleton-loader [theme]="{ width: '70%'}"></ngx-skeleton-loader>
+                        <!-- <label for="" class="mr-1">Status:</label>
+                        <em class="mx-1 badge text-capitalize" [ngClass]="user.status!='online'? user.status!='offline'?'bg-warning':'bg-danger':'bg-success'">{{user.status}}</em> -->
+                      </section>
+                      <section class="py-3 ">
+                        <ngx-skeleton-loader [theme]="{ height:'40px', width: '50%'}"></ngx-skeleton-loader>
+                        <ngx-skeleton-loader class="mx-4" [theme]="{ height:'40px', width: '20%'}"></ngx-skeleton-loader>
+                        <!-- <button type="button" class="btn btn-outline-primary">Add user</button>
+                        <button type="button" class="btn btn-outline-danger mx-4" 
+                        data-bs-dismiss="toast" aria-label="Close" style="color: red; padding:5px">
+                            <span class="btn btn-close"></span>
+                        </button> -->
+                      </section>
+                      
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+      
+    </section>
+    
+    
+    
+    <!-- <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../../assets/profile.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Emanuel</h5>
+                  <section>
+                    <label for="">Designation:</label>
+                    <strong class="px-1">Senior Developer</strong>
+                  </section>
+                  <section>
+                    <label for="">Department:</label>
+                    <strong class="px-1">Insurance</strong>
+                  </section>
+                  <section>
+                    <label for="" class="mr-1">Status:</label>
+                    <em class="mx-1 badge bg-success">Online</em>
+                  </section>
+                  <section class="py-3">
+                    <button type="button" class="btn btn-outline-primary">Add user</button>
+                    <button type="button" class="btn btn-outline-danger mx-4" 
+                    data-bs-dismiss="toast" aria-label="Close" style="color: red; padding:5px">
+                        <span class="btn btn-close"></span>
+                    </button>
+                  </section>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../../assets/profile.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Rachael</h5>
+                  <section>
+                    <label for="">Designation:</label>
+                    <strong class="px-1">Tech Archietect</strong>
+                  </section>
+                  <section>
+                    <label for="">Department:</label>
+                    <strong class="px-1">Insurance</strong>
+                  </section>
+                  <section>
+                    <label for="" class="mr-1">Status:</label>
+                    <em class="mx-1 badge bg-danger">offline</em>
+                  </section>
+                  <section class="py-3">
+                    <button type="button" class="btn btn-outline-primary">Add user</button>
+                    <button type="button" class="btn btn-outline-danger mx-4" 
+                    data-bs-dismiss="toast" aria-label="Close" style="color: red; padding:5px">
+                        <span class="btn btn-close"></span>
+                    </button>
+                  </section>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../../../assets/profile.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Janelene</h5>
+                  <section>
+                    <label for="">Designation:</label>
+                    <strong class="px-1">Tech Assistant</strong>
+                  </section>
+                  <section>
+                    <label for="">Department:</label>
+                    <strong class="px-1">Insurance</strong>
+                  </section>
+                  <section>
+                    <label for="" class="mr-1">Status:</label>
+                    <em class="mx-1 badge bg-warning">Away</em>
+                  </section>
+                  <section class="py-3">
+                    <button type="button" class="btn btn-outline-primary">Add user</button>
+                    <button type="button" class="btn btn-outline-danger mx-4" 
+                    data-bs-dismiss="toast" aria-label="Close" style="color: red; padding:5px">
+                        <span class="btn btn-close"></span>
+                    </button>
+                  </section>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<!-- <ngx-skeleton-loader></ngx-skeleton-loader> -->

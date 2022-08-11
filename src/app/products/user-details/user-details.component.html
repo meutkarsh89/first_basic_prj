@@ -1,0 +1,71 @@
+<div class="row container-fluid" style="padding: 0 8%;">
+    <div class="col-md-12">
+        <h2 class="text-capitalize my-3">employee details</h2>
+        <hr>
+        <div class="row" [ngClass]=" loading? 'loading': '' ">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div *ngIf="userDetail" class="card mb-3 shadow rounded" >
+                    <div class="text-center">
+                        <img src="../../../assets/profile.jpg" width="200" alt="...">
+                        <div style="position: relative; bottom: 11rem; left: 13rem;">
+                            <button type="button" class="btn btn-outline-danger" [routerLink]="['./']" [queryParams]="{editMode:true}">Edit</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    <!-- <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    <div class="row mx-2">
+                        <div class="col-md-6 form-group">
+                            <label for="userName" class="d-block">Name</label>
+                            <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.uname}}</h3>
+                            <input *ngIf="editMode" class="form-control mb-2" type="text" name="uname" id="userName" [(ngModel)]="userDetail.uname">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="desig" class="d-block">Designation</label>
+                            <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.designation}}</h3>
+                            <input *ngIf="editMode" class="form-control mb-2" type="text" name="designation" id="desig" [(ngModel)]="userDetail.designation">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="department" class="d-block">Department</label>
+                            <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.department}}</h3>
+                            <input *ngIf="editMode" class="form-control mb-2" type="text" name="department" id="department" [(ngModel)]="userDetail.department">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="status" class="d-block">Status</label>
+                            <h3 *ngIf="!editMode" class="text-capitalize text-primary">{{userDetail.status}}</h3>
+                            <input *ngIf="editMode" class="form-control mb-2" type="text" name="status" id="status" [(ngModel)]="userDetail.status">
+                        </div>
+                    </div>
+                    <div class="row mx-2 mt-4">
+                        <div *ngIf="!editMode" class="col-md-12">
+                            <button routerLink="../" type="button" class="btn btn-outline-success">Back to gallery</button>
+                        </div>
+                        <div *ngIf="editMode" class="col-md-12 d-flex justify-content-center">
+                            <button (click)="onUpdateUser()" type="button" class="btn btn-primary">Save</button>
+                            <button [routerLink]="['./']" type="button" class="btn btn-danger mx-3">Cancel</button>
+                            <!-- <div class="row">
+                                .col-md-6
+                            </div> -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <ng-container *ngIf="!userDetail">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="spinner-border mx-2 text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>Fetching user...
+                    </div>
+                </ng-container>
+                
+            </div>
+        </div>
+        <section *ngIf="loading" class="page-loader">
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </section>
+    </div>
+</div>

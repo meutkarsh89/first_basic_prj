@@ -11,13 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LoginComponent } from './login/login.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ParentComponent } from './parent/parent.component';
+import { ParentComponent } from './databind/parent/parent.component';
 import { ProductsComponent } from './products/products.component';
 // import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 // import { ServicesComponent } from './services/services.component';
-import { SubjectComponent } from './subject/subject.component';
+import { SubjectComponent } from './databind/subject/subject.component';
 // import { TempFormComponent } from './temp-form/temp-form.component';
-import { ViewchildComponent } from './viewchild/viewchild.component';
+import { ViewchildComponent } from './databind/viewchild/viewchild.component';
 
 const routes: Routes = [
   

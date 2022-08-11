@@ -1,0 +1,99 @@
+<h2 class="text-center text-primary text-capitalize my-4">manage products</h2>
+
+<section class="my-3 px-3">
+    <hr>
+    <section class="row mx-3" [ngClass]=" loading? 'loading': '' ">
+        <section class="col-md-6">
+            <h2 class="text-primary text-capitalize my-3">add products</h2>
+            <form action="" (ngSubmit)="onSubmit(productForm.value)" #productForm="ngForm">
+                <div class="mb-3">
+                    <label class="form-label" for="pId">Product Id</label>
+                    <input type="text" class="form-control" ngModel placeholder="enter product ID" name="prodId" id="pId">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="pName">Product Name</label>
+                    <input type="text" class="form-control" ngModel placeholder="enter product name" name="prodName" id="pName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="pPrice">Product Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" ngModel name="prodPrice" id="pPrice">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+                <div class="row mb-3 ">
+                    <!-- <button class="btn btn-primary d-inline">Add Product</button>
+                    <button class="btn btn-success d-inline">Save Product</button>
+                    <button class="btn btn-warning d-inline">Fetch Product</button> -->
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary">{{edit? 'Update Product':'Add Product'}}</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-success" (click)="onSaveProducts()">Save Product</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-warning" (click)="onFetchProduct()">Fetch Product</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="col-md-6">
+            <h2 class="text-primary text-capitalize my-3">{{dataTitle | async}}</h2>
+            <table class="table">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Index</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngIf="!fetching">
+                    <tr *ngFor="let prod of products; index as i">
+                      <td>{{i+1}}</td>
+                      <!-- <td><img src="{{prod.prodImg}}" style="width:110px" alt=""></td> -->
+                      <td>
+                        <label *ngIf="!edit" class="text-label">{{prod.prodId}}</label>
+                        <input *ngIf="edit" type="text" class="form-control" name="" id="" [(ngModel)]="prod.prodId">
+                      </td>
+                      <td>
+                        <label *ngIf="!edit" class="text-label">{{prod.prodName}}</label>
+                        <input *ngIf="edit" type="text" class="form-control" name="" id="" [(ngModel)]="prod.prodName">
+                      </td>
+                      <td>
+                        <label *ngIf="!edit" class="text-label">{{prod.prodPrice}}</label>
+                        <input *ngIf="edit" type="text" class="form-control" name="" id="" [(ngModel)]="prod.prodPrice">
+                      </td>
+                      <td>
+                        <button *ngIf="!edit" class="vtn btn-sm btn-warning" (click)="onEditProduct(i)">Edit</button>
+                        <button *ngIf="edit" class="vtn btn-sm btn-success" (click)="onSaveEdit(i)">Save</button>
+                        <!-- <span class="fa fa-trash"></span> -->
+                      </td>
+                      <td>
+                        <!-- <button class="vtn btn-sm btn-danger" (click)="onRemoveProduct(i)">Delete</button> -->
+                        <button class="vtn btn-sm btn-danger" (click)="onDeleteProduct(prod.prodCode)">Delete</button>
+                        <!-- <span class="fa fa-trash"></span> -->
+                      </td>
+                    </tr>
+                  </ng-container>      
+                </tbody>
+            </table>
+            <ng-container *ngIf="fetching">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="spinner-border mx-2 text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>Fetching products...
+                </div>
+            </ng-container>
+        </section>
+    </section>
+</section>
+<section *ngIf="loading" class="page-loader">
+    <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</section>

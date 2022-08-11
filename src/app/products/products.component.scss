@@ -1,15 +1,6 @@
-.bg-style{
-    // background: rgb(208, 166, 255);
-    margin: auto;
-    // height: 25em;
-    text-align: center;
-}
-.card-group{
-    display: inline-block;
-    flex-wrap: wrap;
-    .card{
-        display: inline-block;
-        margin: 0 10px 10px 0;
-        width: 45%;
-    }
+.myActiveClass{
+    // background-color: #fefefe;
+    border-bottom: 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }

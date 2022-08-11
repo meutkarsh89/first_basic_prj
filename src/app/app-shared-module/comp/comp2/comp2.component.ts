@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DesignUtilityService } from '../appServices/design-utility.service';
+import { DesignUtilityService } from '../../../appServices/design-utility.service';
 
 @Component({
-  selector: 'app-subject',
-  templateUrl: './subject.component.html',
-  styleUrls: ['./subject.component.scss']
+  selector: 'app-comp2',
+  templateUrl: './comp2.component.html',
+  styleUrls: ['./comp2.component.scss']
 })
-export class SubjectComponent implements OnInit {
+export class Comp2Component implements OnInit {
 
   userName:string = '';
 

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Comp6Component } from '../comp6/comp6.component';
+import { Comp6Component } from '../../app-shared-module/comp/comp6/comp6.component';
 @Component({
   selector: 'app-viewchild',
   templateUrl: './viewchild.component.html',

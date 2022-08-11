@@ -1,5 +1,5 @@
 import { AfterContentInit, Component, ContentChild, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { CustomDirDirective } from '../app-directives/custom-dir.directive';
+import { CustomDirDirective } from '../../../app-directives/custom-dir.directive';
 
 @Component({
   selector: 'app-comp6',

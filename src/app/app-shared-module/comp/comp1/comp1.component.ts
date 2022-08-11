@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DesignUtilityService } from '../appServices/design-utility.service';
+import { DesignUtilityService } from '../../../appServices/design-utility.service';
 
 @Component({
   selector: 'app-comp1',
