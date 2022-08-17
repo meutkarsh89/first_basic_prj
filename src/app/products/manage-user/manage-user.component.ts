@@ -148,7 +148,7 @@ export class ManageUserComponent implements OnInit {
 
   //when POST method used
     const prod:Product = this.products[index];
-    const code:string|undefined = this.products[this.editIndex].prodCode;
+    const code:string = this.products[this.editIndex].prodCode as string;
       if(code!=undefined){
         this._productsService.updateEditShipment(code, prod).subscribe(res=>{
           console.log(res);

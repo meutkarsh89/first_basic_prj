@@ -49,7 +49,11 @@ export class UserDetailsComponent implements OnInit {
     this.loading=true;
     console.log(this.userDetail);
     this._userService.updateUser(this.userId, this.userDetail).subscribe(res=>{
-      console.log(res);
+      console.log(this.activateRoute.pathFromRoot);
+      this.activateRoute.queryParams.subscribe(res=>{
+        console.log(res);
+        
+      })
       this.router.navigate(['./products/users-gallery/',this.userId])
       this.editMode=false;
       this.loading=false;
